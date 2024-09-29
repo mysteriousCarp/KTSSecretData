@@ -6,22 +6,41 @@
     <meta property="og:title" content="Важно">
     <meta property="og:description" content="Нажми сюда, чтобы увидеть что-то невероятное!">
     <meta http-equiv="refresh" content="3; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+    <style>
+        #loading {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <h1>Подождите пару секунд...</h1>
+    <div id="loading">.</div>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SGZVB36MG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2SGZVB36MG');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-2SGZVB36MG');
+    </script>
     <img src="https://i.postimg.cc/P59nvmzT/1.jpg">
     <script>
         setTimeout(function(){
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }, 3000);
+
+        // Анимация точки
+        let loadingText = document.getElementById('loading');
+        let sequence = [".", "..", ".."];
+        let index = 0;
+
+        function animateLoading() {
+            loadingText.textContent = sequence[index];
+            index = (index + 1) % sequence.length;
+        }
+
+        setInterval(animateLoading, 500);
     </script>
 </body>
 </html>
